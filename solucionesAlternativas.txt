@@ -1,0 +1,22 @@
+Mostrar primeras filas del txt:
+#ds.head() como alternativa
+
+casa mas cara de todo el dataset:
+#print(ds["price"][:4])
+#ds.loc[ds["price"] > 6000000, ["id_realEstates", "isNew", "realEstate_name", "price"]]
+#ds.loc[ds["price"].max()]
+#ds['price'].idxman() devuelve el indice
+#ds.loc[ds['price'] == ds['price'].max()].loc[13110, "address"] devuelve el campo "address", lo escrito es el resultado final a prueba de errores
+#ds.loc[ds['price'] == ds['price'].max(), ['address']].values[0]  lo devuelve como un array pero tipo objeto
+
+casa mas barata: 
+#ds.nsmallest(1, ["price"]) casa de menor precio
+
+Forma alternativa a eliminar los NaN del dataset:
+#dropna y le metes axis de columna
+#filas, columnas = ds.shape
+#comprobacion que no hay filas
+#dataframe_sin_nulos =  ds.fillna("saludos")
+#dataframe_sin_nulos.loc[dataframe_sin_nulos["surface"] == "saludos"]
+#dataframe_sin_nulos.loc[dataframe_sin_nulos["surface"] != "saludos"].loc[0]
+
